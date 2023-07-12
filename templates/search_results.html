@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results - IRCTC Database Management System</title>
+    <style>
+        /* Styles for the navigation bar */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+  }
+
+  body {
+    background-color: #eaedef;
+  }
+
+  .navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  .navbar a.active {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  /* Styles for the content */
+  .container {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+        body {
+            /* font-family: Arial, sans-serif; */
+            background-color: #f2f2f2;
+            /* padding: 20px; */
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="bgimage"></div>
+  
+        <div class="navbar">
+          <a href="/">Home</a>
+          <a href="/search_train" class="active">Trains</a>
+          <a href="/schedule">Train Schedule</a>
+          <a href="/signup">Signup</a>
+          <a href="/login">Login</a>
+          <a href="/add_train">Add Train</a>
+          <a href="/about">About Me</a>
+        </div>
+    <h1>Search Results</h1>
+    <h2>Source Station: {{ source }}</h2>
+    <h2>Destination Station: {{ destination }}</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Train Number</th>
+                <th>Train Name</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Distance</th>
+                <th>Total Time</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for train in trains %}
+            <tr>
+                <td>{{ train.train_number }}</td>
+                <td>{{ train.train_name }}</td>
+                <td>{{ train.source }}</td>
+                <td>{{ train.destination }}</td>
+                <td>{{ train.distance }}</td>
+                <td>{{ train.total_time }}</td>
+                <td>{{ train.departure }}</td>
+                <td>{{ train.arrival }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
