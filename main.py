@@ -5,7 +5,7 @@ from sqlalchemy import and_, or_
 app = Flask(__name__)
 app.secret_key = 'dnyaneshyeole'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost:3307/irctc'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/irctc'
 db = SQLAlchemy(app)
 
 
